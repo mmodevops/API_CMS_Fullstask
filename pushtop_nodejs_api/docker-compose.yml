@@ -1,0 +1,14 @@
+version: '2'
+services:
+  apiserver:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: nodejs_api
+    container_name: nodejs_api
+    restart: always
+    ports:
+      - '8181:8181'
+    volumes:
+      - './:/usr/src/app/'
+      - /usr/src/app/node_modules
